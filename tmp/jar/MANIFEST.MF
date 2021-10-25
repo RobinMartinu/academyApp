@@ -1,0 +1,4 @@
+Manifest-Version: 1.0
+Implementation-Title: spark-boilerplate
+Main-Class: com.channie.Service
+

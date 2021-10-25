@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Bonus#1</title>
+<link rel="stylesheet" href="./styles/generic.css">
+ <script>
+    function prepareForm(nFormQueries) {
+      /*
+        for (let index = 0; index < nFormQueries; index++) {
+            document.getElementById(index).value = String(document.getElementById(index).value).preventXss();
+        }*/
+        document.getElementById("site2Form").submit();
+        }
+
+</script>
+<script src="./scripts/xss2.js">
+</script>
+
+
+</head>
+<body>
+    <button onclick="location.href = 'http://' + location.host" style = "margin-left: 1%; margin-top: 1%"> Prev</button>
+    <button onclick="location.href = 'http://' + location.host + '/bonus2'" style = "margin-left: 70%; margin-top: 1%"> Next</button>    
+
+        <div class="div-container">
+            <div style="display:inline-block">
+              <form action="/bonus1" id="site2Form" method="post">
+                First name:<br>
+                <input type="text" id="0" name="firstName" value="Mickey" placeholder="First Name"><br>
+                Last name:<br>
+                <input type="text" id="1" name="lastName" value="Mouse" placeholder="Last Name"><br>
+                Middle name:<br>
+                <input type="text" id="2" name="middleName" value="the Playful" placeholder="Middle Name (Optional)"><br>
+              
+                <input type="submit" id="submitButton" value="Submit" style="display:none">
+                <input type="button" onClick="prepareForm(3)" value="Submit">
+              </form>
+            </div>
+          </div>
+    
+</div>
+
+
+</body>
+</html>

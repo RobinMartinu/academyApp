@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Site2</title>
+<link rel="stylesheet" href="./styles/generic.css">
+ <script>
+    function prepareForm(nFormQueries) {
+        for (let index = 0; index < nFormQueries; index++) {
+            document.getElementById(index).value = String(document.getElementById(index).value).preventXss();
+        }
+        document.getElementById("site2Form").submit();
+        }
+
+</script>
+<script src="./scripts/xss2.js">
+</script>
+
+
+</head>
+<body>
+    <button onclick="location.href = 'http://' + location.host + '/site1'" style = "margin-left: 1%; margin-top: 1%"> Prev</button>
+    <button onclick="location.href = 'http://' + location.host + '/site3'" style = "margin-left: 70%; margin-top: 1%"> Next</button>    
+
+        <div class="div-container">
+            <div style="display:inline-block">
+              <form action="/site2" id="site2Form" method="post">
+                First name:<br>
+                <input type="text" id="0" name="firstName" value="Mickey"><br>
+                Last name:<br>
+                <input type="text" id="1" name="lastName" value="Mouse"><br>
+                Age:<br>
+                <input type="text" id="2" name="age" value="30"><br>
+              
+                <input type="submit" id="submitButton" value="Submit" style="display:none">
+                <input type="button" onClick="prepareForm(3)" value="Submit">
+              </form>
+            </div>
+          </div>
+    
+</div>
+
+
+</body>
+</html>
